@@ -29,12 +29,11 @@ $hls =json_decode($response);
 $image =$hls->image_url;
 $title =$hls->title;
 $des =$hls->description;
-$hlss =$hls->hls[0];
+$hlss =$hls->video[0];
 $sub =$hls->vtt_thumbnail_url[0];
 $error =$hls->error_code;
-$resStr = str_replace('drm', 'hls', $hlss); 
 
- $url = "https://zee5vodnd.akamaized.net".$resStr.$vtok;
+ $url = "https://zee5vodnd.akamaized.net".$hls;
 header("Content-Type: application/json");
 $errr= array("error" => "error provide proper input!" );
 $err =json_encode($errr);
