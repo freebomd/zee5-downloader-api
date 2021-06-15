@@ -33,7 +33,7 @@ $hlss =$hls->video[0];
 $sub =$hls->vtt_thumbnail_url[0];
 $error =$hls->error_code;
 
- $url = "https://zee5vodnd.akamaized.net".$hls;
+ $url = "https://zee5vodnd.akamaized.net".$hlss;
 header("Content-Type: application/json");
 $errr= array("error" => "error provide proper input!" );
 $err =json_encode($errr);
