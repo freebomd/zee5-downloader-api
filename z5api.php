@@ -26,6 +26,7 @@ $response = curl_exec($curl);
 curl_close($curl);
 
 $hls =json_decode($response);
+$id = $hls->id;
 $image =$hls->image_url;
 $title =$hls->title;
 $des =$hls->description;
@@ -37,7 +38,7 @@ $error =$hls->error_code;
 header("Content-Type: application/json");
 $errr= array("error" => "error provide proper input!" );
 $err =json_encode($errr);
-$apii = array("title" => $title, "description" => $des, "thumbnail" => $image, "video_url" => $url);
+$apii = array("id"=>$id, "title" => $title, "description" => $des, "thumbnail" => $image, "video_url" => $url);
 $api =json_encode($apii);
 if($error ==101){
 echo $err;
@@ -47,5 +48,5 @@ echo $api;
 }
 }
 else{
-  echo "error provide proper link";
+  echo "error";
 }
